@@ -1,18 +1,40 @@
+
 {
-  "name": "newssite",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jstransformer": "^0.0.2",
-    "mongoose": "^6.0.10",
-    "morgan": "~1.9.1",
-    "pug": "^3.0.2"
-  }
+    "name": "newssite",
+    "version": "1.0.0",
+    "description": "News & Social Web Application",
+    "private": true,
+    "version": "1.0.0",
+    "description": "News & Social Web Application",
+    "main": "index.js",
+    "repository":
+    {
+        "type": "git",
+        "url": "git+https://github.com/Erokhar/NewsSite.git"
+    },
+    "keywords": [
+        "News"
+    ],
+    "author": "Adam Benrqia",
+    "license": "ISC",
+    "bugs":
+    {
+        "url": "https://github.com/Erokhar/NewsSite/issues"
+    },
+    "homepage": "https://github.com/Erokhar/NewsSite#readme",
+    "scripts":
+    {
+        "start": "node ./bin/www"
+    },
+    "dependencies":
+    {
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "express": "~4.16.1",
+        "http-errors": "~1.6.3",
+        "jstransformer": "^0.0.2",
+        "mongoose": "^6.0.10",
+        "morgan": "~1.9.1",
+        "pug": "^3.0.2"
+    }
 }
