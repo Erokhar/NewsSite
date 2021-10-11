@@ -1,2 +1,2 @@
 # NewsSite
-News and Social Web Application
+-News and Social Web Application
