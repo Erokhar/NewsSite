@@ -11,10 +11,10 @@ var Schema = mongoose.Schema
 var users = new Schema({
   name:String
 })
-var newsModel = mongoose.model('users', users);
+//var newsModel = mongoose.model('users', users);
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' , hell: 'HELLSPAWN'});
 });
 
@@ -24,6 +24,6 @@ router.post("/save",function(req,res,next){
   newsInstance.save(function (err) {
     if (err) return handleError(err);
   });
-})
+})*/
 
 module.exports = router;

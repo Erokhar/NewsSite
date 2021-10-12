@@ -1,0 +1,28 @@
+extends layout 
+
+block content
+    div#login.container
+        div 
+            form(method='post', action='/users/loginuser' , class='form-vertical')
+                fieldset
+                    legend: strong.text-info Sign in page
+                    
+                    if message.errusername
+                        div.alert.alert-danger Missing Username
+                    
+                    if message.errpassword
+                        div.alert.alert-danger Missing Password
+
+                    if message.errwronguserpass
+                        div.alert.alert-danger Wrong Username or Password
+                    
+                    div.form-group
+                    label Username:
+                    input.form-control(name='username', placeholder="Username")
+
+                    div.form-group
+                    label Password:
+                    input.form-control(name='password',placeholder="Password", type='password')
+
+                    div.form-actions
+                    input.btn.btn-primary(type='submit', value='Login')
