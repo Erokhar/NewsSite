@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+const sessions = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,9 +8,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var userSigninRouter = require('./routes/userSignIn')
 var userLoginRouter = require('./routes/userLogin')
+var newsInputRouter = require('./routes/newsInput')
 
 var app = express();
-
+app.use(sessions({
+  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+  saveUninitialized:true,
+  resave: false,
+  userid:String
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -23,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', userSigninRouter);
 app.use('/users', userLoginRouter);
+app.use('/news', newsInputRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,5 +48,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

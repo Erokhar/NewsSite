@@ -1,14 +1,10 @@
-
 {
     "name": "newssite",
     "version": "1.0.0",
     "description": "News & Social Web Application",
     "private": true,
-    "version": "1.0.0",
-    "description": "News & Social Web Application",
     "main": "index.js",
-    "repository":
-    {
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/Erokhar/NewsSite.git"
     },
@@ -17,20 +13,18 @@
     ],
     "author": "Adam Benrqia",
     "license": "ISC",
-    "bugs":
-    {
+    "bugs": {
         "url": "https://github.com/Erokhar/NewsSite/issues"
     },
     "homepage": "https://github.com/Erokhar/NewsSite#readme",
-    "scripts":
-    {
+    "scripts": {
         "start": "node ./bin/www"
     },
-    "dependencies":
-    {
-        "cookie-parser": "~1.4.4",
+    "dependencies": {
+        "cookie-parser": "^1.4.5",
         "debug": "~2.6.9",
         "express": "~4.16.1",
+        "express-session": "^1.17.2",
         "http-errors": "~1.6.3",
         "jstransformer": "^0.0.2",
         "mongoose": "^6.0.10",

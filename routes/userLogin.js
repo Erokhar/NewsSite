@@ -1,4 +1,5 @@
 var express = require('express');
+const sessions = require('express-session');
 var router = express.Router();
 var mongoose = require('mongoose')
 var mongoDB = 'mongodb+srv://admin:admin@cluster0.yuq97.mongodb.net/NewsSiteDB?retryWrites=true&w=majority'
@@ -46,7 +47,9 @@ router.post("/loginuser",function(req,res,next){
         }
         else{
             console.log("match found")
-            res.render("index",{title:"Express"})
+            req.session.userid = user._id
+            //res.set("userid",user._id)
+            res.render("index",{title:req.session.userid})
             return
         }
     })

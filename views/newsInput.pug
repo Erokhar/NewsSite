@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div 
+        form(method='post', action='/news/saveNews' , class='form-vertical')
+            fieldset
+                legend: strong.text-info New News Article
+
+                if message.errnewstitle
+                    div.alert.alert-danger Missing News Title
+                    
+                if message.errnewsbody
+                    div.alert.alert-danger Missing News Content
+                
+                div.form-group
+                    label News Title :
+                    input.form-control(name='newsTitle', placeholder="News Title")
+                
+                div.form-group
+                    label News Content :
+                    br
+                    textarea(name="newsBody", placeholder="Type here...", rows="17", cols="200") 
+
+                div.form-actions
+                    input.btn.btn-primary(type='submit', value='Submit News Article')
+                    tr 
+                    input.btn.btn-error(type='submit', value='Cancel')
