@@ -34,16 +34,20 @@ router.post('/saveNews',function(req,res,next){
     
     if(errmessage["errnewstitle"] || errmessage["errnewsbody"]){
         res.render("newsInput",{title:'Write a News Article',message:errmessage})
-        return
     }else{
-        newsModel.create({title:newsTitle,content:newsBody,author:req.session.userid,publishingDate:new Date()},function(err,news){
+        var newsUrl = newsTitle.replace(/ /g, "_").toUpperCase()
+        newsModel.create({title:newsTitle,content:newsBody,author:req.session.userid,publishingDate:new Date(),url:newsUrl},function(err,news){
             if (err) {
                 res.render("error",{title:"error",message:err})
                 return handleError(err);
             }
+            
+            req.session.newsTitle = newsTitle
+            req.session.newsUrl = newsUrl
+            res.redirect("/news/newsView")
         })
     }
-// Add a redirect to a news reading page
+
 })
 
 module.exports = router

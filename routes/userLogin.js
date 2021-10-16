@@ -43,14 +43,14 @@ router.post("/loginuser",function(req,res,next){
             console.log("no match")
             errmessage["errwronguserpass"] = true
             res.render("login",{title:"Log In",message:errmessage})
-            return
+            
         }
         else{
             console.log("match found")
             req.session.userid = user._id
             //res.set("userid",user._id)
-            res.render("index",{title:req.session.userid})
-            return
+            res.redirect("/news/newNews")
+            
         }
     })
     

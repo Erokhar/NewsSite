@@ -11,14 +11,13 @@ var Schema = mongoose.Schema
 var users = new Schema({
   name:String
 })
-
 //var newsModel = mongoose.model('users', users);
 
 /* GET home page. */
-/*router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' , hell: 'HELLSPAWN'});
+router.get('/', function(req, res, next) {
+  res.redirect('/users/login');
 });
-
+/*
 router.post("/save",function(req,res,next){
   console.log(req.body["username"])
   var newsInstance = new newsModel({name:req.body["username"]});
