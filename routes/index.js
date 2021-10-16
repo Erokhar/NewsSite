@@ -11,6 +11,7 @@ var Schema = mongoose.Schema
 var users = new Schema({
   name:String
 })
+
 //var newsModel = mongoose.model('users', users);
 
 /* GET home page. */
