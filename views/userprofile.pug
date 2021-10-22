@@ -1,0 +1,32 @@
+extends layoutLogged 
+
+block content
+    div(style="margin-top:50px;margin-left:50px;display:flex")#login.container
+        div
+            div(style="text-align:center;")
+                img(src="/public/img/up.png", alt="").profileImage
+                p(style="font-size:30px;margin-top:10px") #{profileOwner}
+            div(style="margin-top:10px")
+                form(action="/users/saveBio", method="post") 
+                    p Bio:
+                    textarea(placeholder="Type here..." rows=7 cols=25 name="userBio") #{userBio}
+                    input(type="submit", value="Save").btn.btn-primary
+        div 
+            legend(style="text-align:center"): strong.text-info #{title}
+            div(style="margin-left:100px").form-group.centering
+                each news in newsResults
+                    form(method='post', action='/news/selectNews' , class='form-vertical')
+                        div.cardShowCase
+                            //div._3YgWdffoKyCp7UaGAEQpoo
+                                div._2r9FABr2qYEUDyZoenhn6N
+                                    div._1E9mcoVn4MYnuBQSVDt1gC._2oM1YqCxIwkvwyeZamWwhW._37nbKm3ee5NGx6e-LXErLD
+                                        button.voteButton
+                                            span._2q7IQ0BUOWeEZoeAxN555e._3SUsITjKNQ7Tp0Wi2jGxIM.qW0l8Af61EP35WIG6vnGk
+                                                i(src="/public/img/up.png").icon._2Jxk822qXs4DaXwsN7yyHA
+                                        div._1rZYMD_4xY3gRcSS3p8ODO._25IkBM0rRUqWX5ZojEMAFQ 152
+                                        button.voteButton
+                                            span._2q7IQ0BUOWeEZoeAxN555e._3SUsITjKNQ7Tp0Wi2jGxIM.qW0l8Af61EP35WIG6vnGk
+                                                i(src="/public/img/down.png").icon._2Jxk822qXs4DaXwsN7yyHA 
+                            div
+                                input(name="newsid" value=`${news._id}`).invisible
+                                input(type="submit", value=`${news.title} by ${profileOwner}`).readButton

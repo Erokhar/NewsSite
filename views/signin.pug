@@ -1,11 +1,11 @@
 extends layout 
 
 block content
-    div#login.container
-        div 
+    div(style="padding-left: 410px;margin-top:65px")#login.container
+        div.signIn
             form(method='post', action='/users/signinuser' , class='form-vertical')
                 fieldset
-                    legend: strong.text-info Sign in page
+                    legend: strong.text-info Sign in
 
                     if message.erremail
                         div.alert.alert-danger Missing Email
@@ -24,24 +24,29 @@ block content
                     
 
                     div.form-group
-                    label Email:
-                    input.form-control(name='email', placeholder="Email", autofocus)
+                        label Email:
+                        input.form-control(name='email', placeholder="Email", autofocus)
 
                     div.form-group
-                    label First Name:
-                    input.form-control(name='firstname', placeholder="First Name")
+                        label First Name:
+                        input.form-control(name='firstname', placeholder="First Name")
 
                     div.form-group
-                    label Last Name:
-                    input.form-control(name='lastname', placeholder="Last Name")
+                        label Last Name:
+                        input.form-control(name='lastname', placeholder="Last Name")
 
                     div.form-group
-                    label Username:
-                    input.form-control(name='username', placeholder="Username")
+                        label Username:
+                        input.form-control(name='username', placeholder="Username")
 
                     div.form-group
-                    label Password:
-                    input.form-control(name='password',placeholder="Password", type='password')
+                        label Password:
+                        input.form-control(name='password',placeholder="Password", type='password')
 
                     div.form-actions
-                    input.btn.btn-primary(type='submit', value='Login')
+                        input.btn.btn-primary(type='submit', value='Sign In',style='width:100%')
+                    div(style="margin-top:5px").form-actions
+                        a(href="/users/login",style='font-size: 16px;') Log-In
+
+
+

@@ -1,11 +1,11 @@
 extends layout 
 
 block content
-    div#login.container
-        div 
+    div(style="padding-left: 410px;padding-top:90px")#login.container
+        div.signIn
             form(method='post', action='/users/loginuser' , class='form-vertical')
                 fieldset
-                    legend: strong.text-info Sign in page
+                    legend: strong.text-info Log in
                     
                     if message.errusername
                         div.alert.alert-danger Missing Username
@@ -17,12 +17,16 @@ block content
                         div.alert.alert-danger Wrong Username or Password
                     
                     div.form-group
-                    label Username:
-                    input.form-control(name='username', placeholder="Username")
+                        label Username:
+                        input.form-control(name='username', placeholder="Username")
 
                     div.form-group
-                    label Password:
-                    input.form-control(name='password',placeholder="Password", type='password')
+                        label Password:
+                        input.form-control(name='password',placeholder="Password", type='password')
 
                     div.form-actions
-                    input.btn.btn-primary(type='submit', value='Login')
+                        input.btn.btn-primary.loginbutton(type='submit', value='Login')
+                    div(style="margin-top:5px").form-actions
+                        a(href="/users/signin",style='font-size: 16px;') Sign-in
+
+                

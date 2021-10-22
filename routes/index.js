@@ -15,7 +15,10 @@ var users = new Schema({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/users/login');
+  if(req.session.userid==null){
+    res.redirect("/users/login")
+}
+  res.redirect("/users/userProfile")
 });
 /*
 router.post("/save",function(req,res,next){

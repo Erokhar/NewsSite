@@ -30,8 +30,6 @@ router.post("/signinuser",function(req,res,next){
     errmessage["errlastname"] = false
     errmessage["errusername"] = false
     errmessage["errpassword"] = false
-    errmessage["errusername"] = false
-    errmessage["errpassword"] = false
     errmessage["errwronguserpass"] = false
 
     if(email == ''){

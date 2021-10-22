@@ -16,6 +16,11 @@ router.get("/login",function(req,res,next){
     res.render("login",{title:"Log In",message:errmessage})
 })
 
+router.get("/logout",function(req,res,next){
+    req.session.userid = null
+    res.redirect("/users/login")
+})
+
 router.post("/loginuser",function(req,res,next){
     var errmessage = {}
     errmessage["errusername"] = false
@@ -48,8 +53,8 @@ router.post("/loginuser",function(req,res,next){
         else{
             console.log("match found")
             req.session.userid = user._id
-            //res.set("userid",user._id)
-            res.redirect("/news/newNews")
+            req.session.username = user.username
+            res.redirect("/users/userProfile")
             
         }
     })

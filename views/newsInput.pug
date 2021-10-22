@@ -1,7 +1,7 @@
-extends layout
+extends layoutLogged
 
 block content
-    div 
+    div(style="margin:50px")
         form(method='post', action='/news/saveNews' , class='form-vertical')
             fieldset
                 legend: strong.text-info New News Article
@@ -19,9 +19,9 @@ block content
                 div.form-group
                     label News Content :
                     br
-                    textarea(name="newsBody", placeholder="Type here...", rows="17", cols="200") 
+                    textarea(name="newsBody", placeholder="Type here...", rows="17", cols="190") 
 
                 div.form-actions
                     input.btn.btn-primary(type='submit', value='Submit News Article')
                     tr 
-                    input.btn.btn-error(type='submit', value='Cancel')
+                    a.btn(href='/users/userProfile') Cancel
